@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "SET IMAS_TAG=tag2 && gulp serve",
+    "start": "gulp serve",
     "start:debug": "cross-env DEBUG=express-mongoose-es6-rest-api:* yarn start",
     "build": "gulp",
     "lint": "esw *.js server config --color",
