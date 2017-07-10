@@ -61,8 +61,8 @@ module.exports = function (options) {
         //this will not be sent to a another microservice as this is listning and not a client
         //so emmiting the imas data and docker container id to data collection server
 
-        //emmitor(data.act.imas)
-        //store.setData(data.act.imas)
+        emmitor(data.act.imas)
+        store.setData(data.act.imas)
         redisOut.lpush(topic + '_res' + '/' + data.origin, outstr, function (err, reply) {
           console.log('this is the reply ', JSON.stringify(outstr))
           if (err) {
