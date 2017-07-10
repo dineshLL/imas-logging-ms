@@ -12,8 +12,14 @@ seneca.use('./redis-queue-transport', {
 })
 
   .ready(function () {
-    console.log('ready function called')
-    this.add({ role: 'log', cmd: 'data' }, routes.insertHandler);
+    console.log('ready function called') //routes.insertHandler
+    this.add({ role: 'log', cmd: 'data' }, function(msg, reply) {
+      reply({message: 'this is fukcking done'})
+    });
+
+    this.add({ role: 'log', cmd: 'test' }, function(msg, reply) {
+      reply('loggin done')
+    });
 
   });
 
