@@ -42,7 +42,7 @@ function getDockerContainerId() {
 function saveUrlMeta(imas) {
     imas.inboundType = "2"
     imas.containerId = containerId
-    imas.tag = process.env.IMAS_TAG || 'logger'
+    imas.tag = process.env.IMAS_TAG
 
     var data = JSON.stringify(imas)
     return new Promise((resolve, reject) => {

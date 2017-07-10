@@ -62,9 +62,10 @@ module.exports = function (options) {
         //so emmiting the imas data and docker container id to data collection server
 
         emmitor(data.act.imas)
+        store.setData(data.act.imas)
         redisOut.lpush(topic + '_res' + '/' + data.origin, outstr, function (err, reply) {
           if (err) {
-            //seneca.log.error('transport', 'redis-queue', err)
+            seneca.log.error('transport', 'redis-queue', err)
           }
         })
       })

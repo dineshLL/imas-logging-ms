@@ -9,7 +9,7 @@ class RoutingHandler {
   dataLogHandler = (args, reply) => {
     console.log('Routing handler(Loggin service)')
     this.logCtrl.logData(args)
-    .then(() => {
+    .then((data) => {
       reply(null, {
         code: 200,
         message: 'log completed'

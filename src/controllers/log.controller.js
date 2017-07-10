@@ -10,7 +10,7 @@ export default class LogController {
     console.log('started logging');
     return new Promise((resolve, reject) => {
       console.log('data ', data);
-      resolve();
+      resolve('this is comming from from the loggin server');
     });
   }
 
