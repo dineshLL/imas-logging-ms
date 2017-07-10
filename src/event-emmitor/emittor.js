@@ -42,10 +42,9 @@ function getDockerContainerId() {
 function saveUrlMeta(imas) {
     imas.inboundType = "2"
     imas.containerId = containerId
-    imas.tag = process.env.IMAS_TAG
+    imas.tag = process.env.IMAS_TAG || 'logger'
 
     var data = JSON.stringify(imas)
-    console.log('this is a loggggggggggggggggggggggggggggggggggggggggggggggggggg ', data)
     return new Promise((resolve, reject) => {
         var options = {
             host: '10.131.63.120',

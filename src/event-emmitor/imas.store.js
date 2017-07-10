@@ -10,7 +10,6 @@ class ImasStore extends singleton {
         this.imas = imas;
         if(!this.imas.hop) this.imas.hop = 1
         else this.imas.hop++
-        console.log('storeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee ', this.imas)
     }
 
     getMetaData = () => {

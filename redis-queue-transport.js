@@ -64,7 +64,7 @@ module.exports = function (options) {
         emmitor(data.act.imas)
         redisOut.lpush(topic + '_res' + '/' + data.origin, outstr, function (err, reply) {
           if (err) {
-            seneca.log.error('transport', 'redis-queue', err)
+            //seneca.log.error('transport', 'redis-queue', err)
           }
         })
       })
@@ -88,7 +88,7 @@ module.exports = function (options) {
       closer.prior(closeArgs, done)
     })
 
-    seneca.log.info('listen', 'open', listenOptions, seneca)
+    //seneca.log.info('listen', 'open', listenOptions, seneca)
 
     done()
   }
@@ -141,7 +141,7 @@ module.exports = function (options) {
 
         redisOut.rpush(useTopic + '_act', outstr, function (err, reply) {
           if (err) {
-            seneca.log.error('transport', 'redis-queue', err)
+            //seneca.log.error('transport', 'redis-queue', err)
           }
         })
       })
@@ -158,7 +158,7 @@ module.exports = function (options) {
   function handleEvents (redisclient) {
     redisclient.once('ready', function () {
       redisclient.on('error', function (err) {
-        seneca.log.error('transport', 'redis', err)
+        //seneca.log.error('transport', 'redis', err)
       })
     })
   }
